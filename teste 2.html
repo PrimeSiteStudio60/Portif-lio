@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeSite Studio | Criação de Sites e Sistemas Profissionais</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-body: #0d0e12;
+            --bg-card: #15171e;
+            --bg-card-hover: #1c1f29;
+            --accent-gold: #d4af37;
+            --accent-gold-hover: #f3c623;
+            --accent-green: #25d366;
+            --accent-insta: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            --text-main: #ffffff;
+            --text-secondary: #9a9caf;
+            --border-color: #232633;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 8%;
+            background-color: rgba(13, 14, 18, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 5rem 8% 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .badge-hero {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero h1 span {
+            color: var(--accent-gold);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        /* BUTTONS */
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, var(--accent-gold), #b89228);
+            color: #000;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+            font-size: 0.9rem;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.35);
+        }
+
+        .btn-whatsapp {
+            background: var(--accent-green) !important;
+            color: #fff !important;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2) !important;
+        }
+
+        .btn-whatsapp:hover {
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.35) !important;
+        }
+
+        .btn-instagram {
+            background: var(--accent-insta) !important;
+            color: #fff !important;
+            box-shadow: 0 4px 20px rgba(220, 39, 67, 0.25) !important;
+        }
+
+        .btn-instagram:hover {
+            box-shadow: 0 6px 25px rgba(220, 39, 67, 0.4) !important;
+        }
+
+        .card-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        /* PACKAGES / PORTFOLIO */
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 2rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .grid-packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 8% 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card-package {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .card-package:hover {
+            border-color: var(--accent-gold);
+            background-color: var(--bg-card-hover);
+            transform: translateY(-5px);
+        }
+
+        .card-featured {
+            border: 1.5px solid var(--accent-gold);
+        }
+
+        .tag-price {
+            background-color: rgba(212, 175, 55, 0.15);
+            color: var(--accent-gold);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        .card-package h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .card-package .description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .features-list li {
+            color: var(--text-main);
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .features-list li i {
+            color: var(--accent-gold);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 3rem 8%;
+            border-top: 1px solid var(--border-color);
+            background-color: #090a0d;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.1rem; }
+            header { 
+                flex-direction: column; 
+                gap: 1rem; 
+                padding: 1.2rem 5%; 
+            }
+            .header-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+            .grid-packages { padding: 0 5% 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">PRIMESITE<span>STUDIOS</span></div>
+        <div class="header-buttons">
+            <a href="https://wa.me/557199060923?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20um%20site." target="_blank" class="btn-main btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://instagram.com/seu_usuario" target="_blank" class="btn-main btn-instagram">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <span class="badge-hero"><i class="fa-solid fa-rocket"></i> Sites & Sistemas Sob Medida</span>
+        <h1>Conecte seu Negócio ao Mundo Digital com um <span>Site Profissional</span></h1>
+        <p>Criamos Landing Pages, Sites Institucionais e Sistemas de Agendamento sob medida para impulsionar suas vendas e passar credibilidade total.</p>
+        <a href="#solucoes" class="btn-main">Conhecer Soluções <i class="fa-solid fa-arrow-down"></i></a>
+    </section>
+
+    <!-- PACKAGES / SERVICES SECTION -->
+    <section id="solucoes">
+        <div class="section-title">
+            <h2>Nossos Serviços e Soluções</h2>
+            <p>Projetos com investimento totalmente flexível e negociável de acordo com sua necessidade</p>
+        </div>
+
+        <div class="grid-packages">
+            <!-- ESSENCIAL -->
+            <div class="card-package">
+                <div>
+                    <span class="tag-price">Valor Negociável</span>
+                    <h3>Site Essencial</h3>
+                    <p class="description">Ideal para quem precisa de presença digital rápida, moderna e eficiente.</p>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-check"></i> Página Única de Alta Conversão</li>
+                        <li><i class="fa-solid fa-check"></i> Design Responsivo (Mobile First)</li>
+                        <li><i class="fa-solid fa-check"></i> Botão Direto para WhatsApp / Instagram</li>
+                        <li><i class="fa-solid fa-check"></i> Galeria de Fotos / Serviços</li>
+                        <li><i class="fa-solid fa-check"></i> Localização via Google Maps</li>
+                    </ul>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/557199060923?text=Olá!%20Tenho%20interesse%20no%20Plano%20Site%20Essencial." target="_blank" class="btn-main btn-whatsapp" style="justify-content: center;">
+                        <i class="fa-brands fa-whatsapp"></i> Negociar via WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/iae_rener?igsi=azVqMmJxMHZvbHBz&utm_source=qr" target="_blank" class="btn-main btn-instagram" style="justify-content: center;">
+                        <i class="fa-brands fa-instagram"></i> Negociar via Direct
+                    </a>
+                </div>
+            </div>
+
+            <!-- PROFISSIONAL (DESTAQUE) -->
+            <div class="card-package card-featured">
+                <div>
+                    <span class="tag-price">Mais Pedido • Negociável</span>
+                    <h3>Site Profissional ⭐</h3>
+                    <p class="description">Para empresas que buscam autoridade no mercado e mais captação de clientes.</p>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-check"></i> Estrutura com até 6 Páginas</li>
+                        <li><i class="fa-solid fa-check"></i> Formulário de Contato Direto</li>
+                        <li><i class="fa-solid fa-check"></i> Otimização Básica para o Google (SEO)</li>
+                        <li><i class="fa-solid fa-check"></i> Integração com Redes Sociais</li>
+                        <li><i class="fa-solid fa-check"></i> Suporte Pós-Entrega Incluso</li>
+                    </ul>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/557199060923?text=Olá!%20Tenho%20interesse%20no%20Plano%20Site%20Profissional." target="_blank" class="btn-main btn-whatsapp" style="justify-content: center;">
+                        <i class="fa-brands fa-whatsapp"></i> Negociar via WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/iae_rener?igsi=azVqMmJxMHZvbHBz&utm_source=qr" target="_blank" class="btn-main btn-instagram" style="justify-content: center;">
+                        <i class="fa-brands fa-instagram"></i> Negociar via Direct
+                    </a>
+                </div>
+            </div>
+
+            <!-- SISTEMA BARBEARIA / PERSONALIZADO -->
+            <div class="card-package">
+                <div>
+                    <span class="tag-price">Projeto Especial</span>
+                    <h3>Sistemas & Agendamento</h3>
+                    <p class="description">Sistemas sob medida para Barbearias, Clínicas e Prestadores de Serviços.</p>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-check"></i> Tabela Interativa de Serviços e Preços</li>
+                        <li><i class="fa-solid fa-check"></i> Seleção de Profissional e Agendamento</li>
+                        <li><i class="fa-solid fa-check"></i> Soma Automática dos Valores</li>
+                        <li><i class="fa-solid fa-check"></i> Painel do Administrador (Altera Preços)</li>
+                        <li><i class="fa-solid fa-check"></i> Envio do Resumo via WhatsApp / Direct</li>
+                    </ul>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/557199060923?text=Olá!%20Tenho%20interesse%20no%20Sistema%20de%20Agendamento%20Personalizado." target="_blank" class="btn-main btn-whatsapp" style="justify-content: center;">
+                        <i class="fa-brands fa-whatsapp"></i> Negociar via WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/iae_rener?igsi=azVqMmJxMHZvbHBz&utm_source=qr" target="_blank" class="btn-main btn-instagram" style="justify-content: center;">
+                        <i class="fa-brands fa-instagram"></i> Negociar via Direct
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 PrimeSite Studio - Soluções Digitais. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
